@@ -1,0 +1,24 @@
+
+plugins {
+  id 'application'
+  id 'org.openjfx.javafxplugin' version '0.0.13'
+}
+
+javafx {
+  version = "20"
+  modules = [ 'javafx.controls', 'javafx.media', 'javafx.fxml' ]
+}
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  implementation 'ai.djl:api:0.21.0'
+  implementation 'ai.djl.huggingface:tokenizers:0.21.0'
+  implementation 'ai.djl.pytorch:pytorch-engine:0.21.0'
+  implementation 'ch.qos.logback:logback-classic:1.4.5'
+}
+
+mainClassName = 'HelloFX'
+
