@@ -10,4 +10,4 @@ This program consists in a simple javafx app that will initialize PyTorch and do
 
 to run the app, type in the console:
 
-`./gredlew run`
+`./gradlew run`
