@@ -39,8 +39,8 @@ public class MyApp extends Application {
         stage.show();
 
         try {
-            model.predict("test 1");
-            model.predict("test 2");
+            displayPrediction(model.predict("test 1"));
+            displayPrediction(model.predict("test 2"));
             System.out.println("Prediction done");
         } catch (TranslateException e) {
             throw new RuntimeException(e);
@@ -50,5 +50,15 @@ public class MyApp extends Application {
     @Override
     public void stop() throws Exception {
         model.close();
+    }
+
+    private void displayPrediction(float[] prediction) {
+        StringBuilder builder = new StringBuilder("model predicted: [");
+        for (int i = 0; i < 10 && i < prediction.length; i++) {
+            builder.append(prediction[i]);
+            builder.append(", ");
+        }
+        builder.append(" ... ]");
+        System.out.println(builder.toString());
     }
 }
