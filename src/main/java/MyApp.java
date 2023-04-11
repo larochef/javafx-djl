@@ -1,4 +1,5 @@
 import ai.djl.inference.Predictor;
+import ai.djl.pytorch.jni.JniUtils;
 import ai.djl.repository.zoo.Criteria;
 import ai.djl.translate.TranslateException;
 
@@ -39,6 +40,7 @@ public class MyApp extends Application {
         stage.show();
 
         try {
+            JniUtils.setGraphExecutorOptimize(false);
             displayPrediction(model.predict("test 1"));
             displayPrediction(model.predict("test 2"));
             System.out.println("Prediction done");
