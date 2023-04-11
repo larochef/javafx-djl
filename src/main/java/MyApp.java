@@ -42,6 +42,8 @@ public class MyApp extends Application {
             displayPrediction(model.predict("test 1"));
             displayPrediction(model.predict("test 2"));
             System.out.println("Prediction done");
+            model.close();
+            System.exit(0);
         } catch (TranslateException e) {
             throw new RuntimeException(e);
         }
